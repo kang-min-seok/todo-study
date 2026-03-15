@@ -3,7 +3,7 @@ import TodoForm from '../components/todo/TodoForm'
 import TodoList from '../components/todo/TodoList'
 
 function TodoPage() {
-  const { todos, isLoading, addTodo, deleteTodo, editTodo, toggleTodo, reorderTodo } = useTodos()
+  const { todos, isLoading, addTodo, deleteTodo, editTodo, toggleTodo } = useTodos()
 
   const completedCount = todos.filter(t => t.completed).length
 
@@ -33,8 +33,6 @@ function TodoPage() {
             const todo = todos.find(t => t.id === id)
             if (todo) toggleTodo(id, !todo.completed)
           }}
-          onMoveUp={(id) => reorderTodo(id, 'up')}
-          onMoveDown={(id) => reorderTodo(id, 'down')}
         />
       )}
     </section>

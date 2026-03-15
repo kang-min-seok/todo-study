@@ -6,11 +6,9 @@ interface Props {
   onDelete: (id: string) => void
   onEdit: (id: string, title: string) => void
   onToggle: (id: string) => void
-  onMoveUp: (id: string) => void
-  onMoveDown: (id: string) => void
 }
 
-function TodoList({ todos, onDelete, onEdit, onToggle, onMoveUp, onMoveDown }: Props) {
+function TodoList({ todos, onDelete, onEdit, onToggle }: Props) {
   if (todos.length === 0) {
     return (
       <p className="text-sm text-(--text) opacity-60 py-10">
@@ -21,17 +19,13 @@ function TodoList({ todos, onDelete, onEdit, onToggle, onMoveUp, onMoveDown }: P
 
   return (
     <ul className="flex flex-col gap-2 w-full max-w-lg">
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <TodoItem
           key={todo.id}
           todo={todo}
-          isFirst={index === 0}
-          isLast={index === todos.length - 1}
           onDelete={onDelete}
           onEdit={onEdit}
           onToggle={onToggle}
-          onMoveUp={onMoveUp}
-          onMoveDown={onMoveDown}
         />
       ))}
     </ul>

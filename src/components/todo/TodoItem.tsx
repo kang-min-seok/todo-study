@@ -4,18 +4,14 @@ import type { Todo } from '../../types/todo'
 
 interface Props {
   todo: Todo
-  isFirst: boolean
-  isLast: boolean
   onDelete: (id: string) => void
   onEdit: (id: string, title: string) => void
   onToggle: (id: string) => void
-  onMoveUp: (id: string) => void
-  onMoveDown: (id: string) => void
 }
 
 const iconBtn = 'px-2 py-1 rounded text-xs transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed'
 
-function TodoItem({ todo, isFirst, isLast, onDelete, onEdit, onToggle, onMoveUp, onMoveDown }: Props) {
+function TodoItem({ todo, onDelete, onEdit, onToggle }: Props) {
   const [isEditing, setIsEditing] = useState(false)
   const [editTitle, setEditTitle] = useState(todo.title)
 
@@ -85,20 +81,6 @@ function TodoItem({ todo, isFirst, isLast, onDelete, onEdit, onToggle, onMoveUp,
             {todo.title}
           </span>
           <div className="flex gap-1 shrink-0">
-            <button
-              onClick={() => onMoveUp(todo.id)}
-              disabled={isFirst}
-              className={cn(iconBtn, 'border border-[(--border)] text-[(--text)] hover:border-[(--accent)]')}
-            >
-              ▲
-            </button>
-            <button
-              onClick={() => onMoveDown(todo.id)}
-              disabled={isLast}
-              className={cn(iconBtn, 'border border-[(--border)] text-[(--text)] hover:border-[(--accent)]')}
-            >
-              ▼
-            </button>
             <button
               onClick={() => { setEditTitle(todo.title); setIsEditing(true) }}
               className={cn(iconBtn, 'border border-[(--border)] text-[(--text)] hover:border-[(--accent)]')}
