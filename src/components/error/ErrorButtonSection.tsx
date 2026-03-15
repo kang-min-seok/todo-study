@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "../../utils/cn";
 
 const btnBase =
   "inline-flex rounded px-2.5 py-1.5 text-sm border-2 border-transparent";
