@@ -1,14 +1,7 @@
-import ErrorButtonSection from "../components/ErrorButtonSection";
-import Toast from "../components/Toast";
+import ErrorButtonSection from '../components/error/ErrorButtonSection'
 
 function MainPage() {
-  return (
-    <>
-      <ErrorButtonSection />
-
-      <Toast />
-    </>
-  );
+  return <ErrorButtonSection />
 }
 
-export default MainPage;
+export default MainPage
