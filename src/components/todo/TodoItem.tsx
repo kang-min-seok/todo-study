@@ -4,9 +4,9 @@ import type { Todo } from '../../types/todo'
 
 interface Props {
   todo: Todo
-  onDelete: (id: string) => void
-  onEdit: (id: string, title: string) => void
-  onToggle: (id: string) => void
+  onDelete: (id: number) => void
+  onEdit: (id: number, title: string) => void
+  onToggle: (id: number) => void
 }
 
 const iconBtn = 'px-2 py-1 rounded text-xs transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed'
