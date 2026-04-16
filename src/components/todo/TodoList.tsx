@@ -3,9 +3,9 @@ import TodoItem from './TodoItem'
 
 interface Props {
   todos: Todo[]
-  onDelete: (id: string) => void
-  onEdit: (id: string, title: string) => void
-  onToggle: (id: string) => void
+  onDelete: (id: number) => void
+  onEdit: (id: number, title: string) => void
+  onToggle: (id: number) => void
 }
 
 function TodoList({ todos, onDelete, onEdit, onToggle }: Props) {

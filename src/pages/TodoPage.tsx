@@ -29,10 +29,7 @@ function TodoPage() {
           todos={todos}
           onDelete={deleteTodo}
           onEdit={editTodo}
-          onToggle={(id) => {
-            const todo = todos.find(t => t.id === id)
-            if (todo) toggleTodo(id, !todo.completed)
-          }}
+          onToggle={toggleTodo}
         />
       )}
     </section>
