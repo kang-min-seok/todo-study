@@ -12,13 +12,18 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@blocknote/core": "^0.48.0",
+    "@blocknote/mantine": "^0.48.0",
+    "@blocknote/react": "^0.48.0",
     "@tailwindcss/vite": "^4.2.1",
     "clsx": "^2.1.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.13.1",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.30"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
